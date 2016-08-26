@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def hello_word(request):
-    return HttpResponse("Hello Word")
+    return render(request, 'home.html')

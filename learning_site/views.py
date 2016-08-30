@@ -1,4 +1,4 @@
 from django.shortcuts import render
 
-def hello_word(request):
+def hello_world(request):
     return render(request, 'home.html')

@@ -2,14 +2,18 @@
 
 <!doctype html>
 <html>
-  <head>
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/layout.css' %}">
-  </head>
-
-  <body>
-    <div class="site-container">
-      {% block content %}{% endblock %}
-    </div>  
-  </body>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/layout.css' %}">
+    </head>
+    <body>
+        <div class="site-container">
+            <nav>
+              <a href="{% url 'home_page' %}">HOMEIt's probably better if we use namespaces. I've put all of the articles URLs into the "articles" namespace. Change your {% url %} tag to use "articles:detail" for the URL name.
+              </a>
+              <a href="{% url 'courses:list' %}">COURSES</a>
+            </nav>
+            {% block content %}{% endblock %}
+        </div>
+    </body>
 </html>
